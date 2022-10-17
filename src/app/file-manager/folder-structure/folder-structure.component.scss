@@ -15,9 +15,9 @@
 		margin-left: -15px;
 		border-left: 1px dotted #aaa;
 		label {
-			padding-left: 37px;
+			padding-left: 40px;
 			cursor: pointer;
-			background: url("../../../assets/folder-horizontal.png") no-repeat 15px 2px;
+			background: url("../../../assets/folder-open-regular.svg") no-repeat 15px 2px;
 			display: block;
 		}
 		input {
@@ -66,7 +66,7 @@
 			padding-left: 21px;
 			color: #313131;
 			text-decoration: none;
-			background: url("../../../assets/document.png") no-repeat 0 0;
+			background: url("../../../assets/file-regular.svg") no-repeat 0 0;
 		}
 	}
 }
