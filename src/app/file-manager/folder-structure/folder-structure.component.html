@@ -11,9 +11,9 @@
                 <li *ngIf="item.type == 'folder'">
                   <label for="menu-{{item.id}}">
                     {{item.name}}
-                    <button class="btn-delete" (click)="deleteNode(list, i, 'folder')">Delete Folder</button>
-                    <button class="btn-delete" (click)="addNode('file', item)">New File</button>
-                    <button class="btn-delete" (click)="addNode('folder', item)">New Folder</button>
+                    <button class="node-btn" (click)="deleteNode(list, i, 'folder')">Delete Folder</button>
+                    <button class="node-btn" (click)="addNode('file', item)">New File</button>
+                    <button class="node-btn" (click)="addNode('folder', item)">New Folder</button>
                   </label>
                   <input #checkboxRef type="checkbox" [checked]="item.checked" id="menu-{{item.id}}" (change)="item.checked = checkboxRef.checked" />
                   <ol class="tree">
@@ -24,7 +24,7 @@
                 </li> 
                 <li class="file" *ngIf="item.type == 'file'">
                   <a href="">{{item.name}}</a>
-                  <button class="btn-delete" (click)="deleteNode(list, i, 'file')">Delete File</button>
+                  <button class="node-btn" (click)="deleteNode(list, i, 'file')">Delete File</button>
                 </li>
               </ng-container>
             </ng-template>

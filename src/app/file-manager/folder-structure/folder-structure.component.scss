@@ -54,14 +54,14 @@
 		}
 
         &:hover {
-            .btn-delete {
+            .node-btn {
                 display: initial;
             }
         }
 	}
 	li.file {
 		margin-left: -1px !important;
-		a:not(.btn-delete) {
+		a:not(.node-btn) {
 			display: inline-block;
 			padding-left: 21px;
 			color: #313131;
@@ -74,7 +74,7 @@ input {
 	font-size: 1em;
 }
 
-.btn-delete {
+.node-btn {
     display: none;
  /*   color: red;*/
     margin-left: 15px;
