@@ -1,0 +1,36 @@
+<section>
+  <div class="rt-container">
+    <div>
+      <div class="btn-section mt-1">
+        <button class="btn-primary" (click)="addNode('folder')">Add folder to root</button>
+      </div>
+        <div class="tree-menu">
+          <ol class="tree">
+            <ng-template #recursiveList let-list="mList" let-parent="parent">
+              <ng-container *ngFor="let item of list; let i=index">
+                <li *ngIf="item.type == 'folder'">
+                  <label for="menu-{{item.id}}">
+                    {{item.name}}
+                    <button class="btn-delete" (click)="deleteNode(list, i, 'folder')">Delete Folder</button>
+                    <button class="btn-delete" (click)="addNode('file', item)">New File</button>
+                    <button class="btn-delete" (click)="addNode('folder', item)">New Folder</button>
+                  </label>
+                  <input #checkboxRef type="checkbox" [checked]="item.checked" id="menu-{{item.id}}" (change)="item.checked = checkboxRef.checked" />
+                  <ol class="tree">
+                    <ng-container [ngTemplateOutlet]="recursiveList"
+                      [ngTemplateOutletContext]="{ mList: item.children, parent: item }">
+                    </ng-container>
+                  </ol>
+                </li> 
+                <li class="file" *ngIf="item.type == 'file'">
+                  <a href="">{{item.name}}</a>
+                  <button class="btn-delete" (click)="deleteNode(list, i, 'file')">Delete File</button>
+                </li>
+              </ng-container>
+            </ng-template>
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ mList: nodes }"></ng-container>
+          </ol>
+        </div>
+    </div>
+  </div>
+</section>
